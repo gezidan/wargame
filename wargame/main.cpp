@@ -1,7 +1,6 @@
 #include <GL/glut.h>
 
 void myDisplay(void)
-
 {
 
 	glClear(GL_COLOR_BUFFER_BIT);
@@ -13,9 +12,7 @@ void myDisplay(void)
 }
 
 int main(int argc, char *argv[])
-
 {
-
 	glutInit(&argc, argv);
 
 	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
