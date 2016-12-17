@@ -1,32 +1,17 @@
-#include <GL/glut.h>
+#include "engine.h"
 
 void myDisplay(void)
 {
-
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	glRectf(-0.5f, -0.5f, 0.5f, 0.5f);
-
-	glFlush();
-
+	render_clear();
+	render_rect(-0.5f, -0.5f, 0.5f, 0.5f);
+	render_flush();
 }
 
 int main(int argc, char *argv[])
 {
-	glutInit(&argc, argv);
+	ini_engine(argc, argv, 100, 100, 400, 400, "第一个OpenGL程序", &myDisplay);
 
-	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
-
-	glutInitWindowPosition(100, 100);
-
-	glutInitWindowSize(400, 400);
-
-	glutCreateWindow("第一个OpenGL程序");
-
-	glutDisplayFunc(&myDisplay);
-
-	glutMainLoop();
+	start_engine();
 
 	return 0;
-
 }
